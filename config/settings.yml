@@ -1,0 +1,27 @@
+system:
+  title: '寄せ書き'
+  url: 'http://yosegaki.ddo.jp/'
+  bbs_url: 
+  trello_url: 
+  google_form_url: 
+  official_twitter_id: 'newburu'
+  description: 'みんなで寄せ書きを投稿しよう！'
+  description_smartphone: '寄せ書き！！'
+  hashtag: '寄せ書き'
+  keywords: ['Twitter', '寄せ書き']
+  twitter_site: newburu
+  twitter:
+    url: 'https://twitter.com/'
+    tweet_url: 'http://twitter.com/intent/tweet'
+    share_url: 'http://twitter.com/share'
+  facebook:
+    share_url: 'https://www.facebook.com/share.php'
+  line:
+    share_url: 'https://social-plugins.line.me/lineit/share'
+  mail:
+    share_url: 'mailto:'
+  default:
+    user_name: 名無しさん
+  const:
+    on_str: 'on'
+    off_str: 'off'

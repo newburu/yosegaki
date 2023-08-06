@@ -1,32 +1,12 @@
 header
   .navbar.bg-base-100
-    .flex-1
-      - oyatsu = oyatsu_mark
-      = link_to "#{oyatsu} #{Settings.system[:title]} #{oyatsu}", root_path, class: "btn btn-ghost normal-case text-xl"
     .hidden.sm:flex
       ul.menu.menu-horizontal.px-1.z-10
         li tabindex="0"
           = link_to t('menu.list'), '#', class: "link link-hover"
           ul.p-2.bg-base-100
             li
-              = link_to t('menu.store'), stores_path, class: "link link-hover"
-            li
-              = link_to t('menu.brand'), brands_path, class: "link link-hover"
-            li
-              = link_to t('menu.product'), products_path, class: "link link-hover"
-            li
-              = link_to t('menu.item'), items_path, class: "link link-hover"
-            li
-              = link_to t('menu.report'), reports_path, class: "link link-hover"
-        li tabindex="0"
-          = link_to t('menu.static_pages.info'), static_pages_info_path, class: "link link-hover"
-          ul.p-2.bg-base-100
-            li
-              = link_to t('menu.static_pages.privacy'), static_pages_privacy_path, class: "link link-hover"
-            li
-              = link_to t('menu.static_pages.terms'), static_pages_terms_path, class: "link link-hover"
-            li
-              = link_to t('menu.static_pages.faq'), static_pages_faq_path, class: "link link-hover"
+              = link_to t('menu.user'), users_path, class: "link link-hover"
         - if login?
           li tabindex="0"
             = link_to '#', class: "link link-hover py-0"
@@ -52,24 +32,7 @@ header
                 = t('menu.list')
               ul.p-2.bg-base-100
                 li
-                  = link_to t('menu.store'), stores_path, class: "link link-hover"
-                li
-                  = link_to t('menu.brand'), brands_path, class: "link link-hover"
-                li
-                  = link_to t('menu.product'), products_path, class: "link link-hover"
-                li
-                  = link_to t('menu.item'), items_path, class: "link link-hover"
-                li
-                  = link_to t('menu.report'), reports_path, class: "link link-hover"
-            li tabindex="0"
-              = link_to t('menu.static_pages.info'), static_pages_info_path, class: "link link-hover"
-              ul.p-2.bg-base-100
-                li
-                  = link_to t('menu.static_pages.privacy'), static_pages_privacy_path, class: "link link-hover"
-                li
-                  = link_to t('menu.static_pages.terms'), static_pages_terms_path, class: "link link-hover"
-                li
-                  = link_to t('menu.static_pages.faq'), static_pages_faq_path, class: "link link-hover"
+                  = link_to t('menu.user'), users_path, class: "link link-hover"
             - if login?
               li
                 = link_to "#{current_user.display_name}さん", class: "link"

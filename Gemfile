@@ -83,3 +83,9 @@ gem "omniauth-rails_csrf_protection"
 
 gem "slim-rails"
 gem "simple_form"
+
+# SEO
+gem 'meta-tags'
+
+# 設定
+gem 'config'

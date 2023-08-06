@@ -18,7 +18,5 @@ html data-theme="cupcake"
   body
     = render 'layouts/header'
     main.container.mx-auto.px-4
-      .text-sm.breadcrumbs
-        = breadcrumbs class: nil, style: :ul
       = yield
     = render 'layouts/footer'
