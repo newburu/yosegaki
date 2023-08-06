@@ -1,0 +1,24 @@
+ja:
+  activerecord:
+    models:
+      # view側： Card.model_name.human => "寄せ書き" / t("activerecord.models.card")と同じ
+      card: 寄せ書き
+      message: メッセージ
+    # model毎に定義したいattributesを記述
+    attributes:
+        card:
+          id: ID
+          # view側： Card.human_attribute_name :title => "タイトル" / t("activerecord.attributes.Card.title")と同じ
+          title: タイトル
+  # 全てのmodelで共通して使用するattributesを定義
+  attributes:
+    created_at: 作成日
+    updated_at: 更新日
+
+  cards:
+    create:
+      notice: "寄せ書きの登録に成功しました。"
+    update:
+      notice: "寄せ書きの更新に成功しました。"
+    destroy:
+      notice: "寄せ書きの削除に成功しました。"

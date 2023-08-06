@@ -1,0 +1,25 @@
+ja:
+  menu:
+    list: サービス
+    card: 寄せ書き
+    message: メッセージ
+    static_pages:
+      info: このサイトについて
+      privacy: プライバシーポリシー
+      terms: 利用規約
+      faq: よくある質問
+  cards:
+    index:
+      title: 寄せ書き
+      btn:
+        new: 寄せ書きを追加する
+        show: この寄せ書きを見る
+    new:
+      title: 寄せ書きを追加
+    show:
+      title: 寄せ書き
+      btn:
+        edit: この寄せ書きを編集する
+        destroy: この寄せ書きを削除する
+    edit:
+      title: 寄せ書きを修正
