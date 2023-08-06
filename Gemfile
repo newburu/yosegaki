@@ -80,3 +80,6 @@ gem 'devise-i18n'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem "omniauth-rails_csrf_protection"
+
+gem "slim-rails"
+gem "simple_form"
