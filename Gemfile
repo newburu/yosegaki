@@ -73,3 +73,10 @@ end
 
 # 環境変数
 gem 'dotenv-rails'
+
+# 認証
+gem 'devise'
+gem 'devise-i18n'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem "omniauth-rails_csrf_protection"
