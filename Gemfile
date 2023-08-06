@@ -89,3 +89,5 @@ gem 'meta-tags'
 
 # 設定
 gem 'config'
+
+gem "tailwindcss-rails", "~> 2.0"
