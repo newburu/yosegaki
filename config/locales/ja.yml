@@ -12,6 +12,7 @@ ja:
       mime_types_processing_error: "MIME::Typesのファイルを処理できませんでした。Content-Typeを確認してください。エラーメッセージ: %{e}"
       mini_magick_processing_error: "MiniMagickがファイルを処理できませんでした。画像を確認してください。エラーメッセージ: %{e}"
   btn:
+    new: 新規
     edit: 編集
     destroy: 削除
     back: 戻る

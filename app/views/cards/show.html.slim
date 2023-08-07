@@ -2,9 +2,10 @@ p style="color: green" = notice
 
 == render @card
 
-div
-  => link_to "Edit this card", edit_card_path(@card)
-  '|
-  =< link_to "Back to cards", cards_path
-
-  = button_to "Destroy this card", @card, method: :delete
+.flex.flex-row.p-2
+  .p-1
+    = link_to t('btn.edit'), edit_card_path(@card), class: "btn btn-primary rounded-md"
+  .p-1
+    = link_to t('btn.back'), cards_path, class: "btn btn-secondary rounded-md"
+  .p-1
+    = button_to t('btn.destroy'), @card, method: :delete, form: { data: { turbo_confirm: t('confirm.destroy') } }, class: "btn btn-warning rounded-md"

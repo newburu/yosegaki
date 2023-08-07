@@ -12,7 +12,7 @@ class CardsController < ApplicationController
 
   # GET /cards/new
   def new
-    @card = Card.new
+    @card = Card.new(user: current_user)
   end
 
   # GET /cards/1/edit
