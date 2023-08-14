@@ -13,6 +13,7 @@ ja:
       mini_magick_processing_error: "MiniMagickがファイルを処理できませんでした。画像を確認してください。エラーメッセージ: %{e}"
   btn:
     new: 新規
+    show: 参照
     edit: 編集
     destroy: 削除
     back: 戻る

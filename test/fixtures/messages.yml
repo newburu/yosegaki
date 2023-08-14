@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  card: one
+  name: MyString
+  title: MyString
+  image: MyString
+  message: MyText
+
+two:
+  card: two
+  name: MyString
+  title: MyString
+  image: MyString
+  message: MyText

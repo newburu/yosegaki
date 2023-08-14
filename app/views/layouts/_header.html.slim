@@ -9,6 +9,8 @@ header
               = link_to t('menu.user'), users_path, class: "link link-hover"
             li
               = link_to t('menu.card'), cards_path, class: "link link-hover"
+            li
+              = link_to t('menu.message'), messages_path, class: "link link-hover"
         - if login?
           li tabindex="0"
             = link_to '#', class: "link link-hover py-0"
@@ -37,6 +39,8 @@ header
                   = link_to t('menu.user'), users_path, class: "link link-hover"
                 li
                   = link_to t('menu.card'), cards_path, class: "link link-hover"
+                li
+                  = link_to t('menu.message'), messages_path, class: "link link-hover"
             - if login?
               li
                 = link_to "#{current_user.display_name}さん", class: "link"

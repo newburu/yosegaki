@@ -1,0 +1,16 @@
+= simple_form_for(@message) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs.flex.flex-col
+    = f.association :card, as: :hidden
+    = f.input :name, input_html: {class: "input w-full input-bordered rounded-md max-w-x"}
+    = f.input :title, input_html: {class: "input w-full input-bordered rounded-md max-w-x"}
+    = f.input :image, input_html: {class: "input w-full input-bordered rounded-md max-w-x"}
+    = f.input :message, input_html: {class: "input w-full input-bordered rounded-md max-w-x"}
+
+  .form-actions.flex.flex-row.p-2
+    .p-1
+      = f.button :submit, class: "btn btn-primary rounded-md"
+    .p-1
+      = link_to t('btn.back'), @message.card, class: "btn btn-secondary rounded-md"

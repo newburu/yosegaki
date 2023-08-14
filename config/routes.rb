@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :messages
   resources :cards
   devise_for :users, controllers: {
     sessions: 'users/sessions',
