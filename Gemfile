@@ -70,3 +70,30 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# 環境変数
+gem 'dotenv-rails'
+
+# 認証
+gem 'devise'
+gem 'devise-i18n'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem "omniauth-rails_csrf_protection"
+
+gem "slim-rails"
+gem "simple_form"
+
+# SEO
+gem 'meta-tags'
+
+# 設定
+gem 'config'
+
+gem "tailwindcss-rails", "~> 2.0"
+
+# i18n
+gem 'rails-i18n'
+group :development do
+  gem 'i18n-debug'
+end
