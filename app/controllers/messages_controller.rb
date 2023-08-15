@@ -22,6 +22,7 @@ class MessagesController < ApplicationController
   # POST /messages or /messages.json
   def create
     @message = Message.new(message_params)
+    @message.user = current_user
 
     respond_to do |format|
       if @message.save
@@ -61,6 +62,7 @@ class MessagesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_message
       @message = Message.find(params[:id])
+      authorize(@message)
     end
 
     # Only allow a list of trusted parameters through.

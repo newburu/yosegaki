@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_07_135945) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_15_025215) do
   create_table "cards", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "dear_name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_07_135945) do
 
   create_table "messages", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "card_id", null: false
+    t.bigint "user_id"
     t.string "name"
     t.string "title"
     t.string "image"
@@ -31,6 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_07_135945) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["card_id"], name: "index_messages_on_card_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -60,4 +62,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_07_135945) do
 
   add_foreign_key "cards", "users"
   add_foreign_key "messages", "cards"
+  add_foreign_key "messages", "users"
 end

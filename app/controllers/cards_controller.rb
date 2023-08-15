@@ -12,7 +12,7 @@ class CardsController < ApplicationController
 
   # GET /cards/new
   def new
-    @card = Card.new(user: current_user)
+    @card = Card.new
   end
 
   # GET /cards/1/edit
@@ -22,6 +22,7 @@ class CardsController < ApplicationController
   # POST /cards or /cards.json
   def create
     @card = Card.new(card_params)
+    @card.user = current_user
 
     respond_to do |format|
       if @card.save
@@ -61,6 +62,7 @@ class CardsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_card
       @card = Card.find(params[:id])
+      authorize(@card)
     end
 
     # Only allow a list of trusted parameters through.

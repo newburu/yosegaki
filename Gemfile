@@ -104,3 +104,6 @@ gem 'cssbundling-rails'
 # 画像アップロード
 gem 'carrierwave'
 gem "mini_magick"
+
+# 認可
+gem 'pundit'
