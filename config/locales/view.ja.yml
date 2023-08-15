@@ -21,5 +21,6 @@ ja:
       btn:
         edit: この寄せ書きを編集する
         destroy: この寄せ書きを削除する
+        new_message: メッセージを追加する
     edit:
       title: 寄せ書きを修正
