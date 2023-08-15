@@ -87,6 +87,8 @@ GEM
       deep_merge (~> 1.2, >= 1.2.1)
       dry-validation (~> 1.0, >= 1.0.0)
     crass (1.0.6)
+    cssbundling-rails (1.2.0)
+      railties (>= 6.0.0)
     date (3.3.3)
     debug (1.8.0)
       irb (>= 1.5.0)
@@ -316,6 +318,7 @@ DEPENDENCIES
   bootsnap
   capybara
   config
+  cssbundling-rails
   debug
   devise
   devise-i18n

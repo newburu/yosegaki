@@ -97,3 +97,6 @@ gem 'rails-i18n'
 group :development do
   gem 'i18n-debug'
 end
+
+# CSS
+gem 'cssbundling-rails'
