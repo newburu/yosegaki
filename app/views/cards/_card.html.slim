@@ -1,16 +1,18 @@
 div id="#{dom_id card}"
-  p
-    strong User:
-    =< card.user_id
-  p
-    strong Dear name:
-    =< card.dear_name
-  p
-    strong Title:
-    =< card.title
-  p
-    strong Image:
-    =< image_tag card.image.url, size: '300x230', class:'card-img-top object-fit-cover'
-  p
-    strong Open at:
-    =< card.open_at
+  .pt-8.mb-8.grid.grid-cols-16
+    .col-span-8.justify-self-center
+      .cursor-pointer
+        .text-2xl.font-bold
+          = card.dear_name
+          span.text-xs
+            | さん
+    .col-span-8.justify-self-center
+      .cursor-pointer
+        .text-2xl.font-bold
+          = "「#{card.title}」"
+  #card_image.m-auto.mb-8
+    = image_tag card.image.url, size: '300x230', class:'mx-auto card-img-top object-fit-cover'
+
+  #messages.grid.gap-x-8.grid-cols-1.md:grid-cols-3
+    - card.messages.each do |message|
+      == render message
