@@ -1,5 +1,7 @@
 header
   .navbar.bg-base-100
+    .flex-1
+      = link_to Settings.system[:title], root_path, class: "btn btn-ghost normal-case text-xl"
     .hidden.sm:flex
       ul.menu.menu-horizontal.px-1.z-10
         li tabindex="0"
