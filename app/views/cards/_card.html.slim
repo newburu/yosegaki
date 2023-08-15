@@ -10,9 +10,9 @@ div id="#{dom_id card}"
       .cursor-pointer
         .text-2xl.font-bold
           = "「#{card.title}」"
-  #card_image.m-auto
+  #card_image.m-auto.mb-8
     = image_tag card.image.url, size: '300x230', class:'mx-auto card-img-top object-fit-cover'
 
-  #messages
+  #messages.grid.gap-x-8.grid-cols-1.md:grid-cols-3
     - card.messages.each do |message|
       == render message

@@ -1,16 +1,15 @@
 div id="#{dom_id message}"
-  p
-    strong Card:
-    =< message.card_id
-  p
-    strong Name:
-    =< message.name
-  p
-    strong Title:
-    =< message.title
-  p
-    strong Image:
-    =< image_tag message.image.url, size: '300x230', class:'card-img-top object-fit-cover'
-  p
-    strong Message:
-    =< message.message
+  .mb-8.bg-pink-100.min-h-fit
+    .from.cursor-pointer
+      .text-xl.font-bold
+        = message.name
+        span.text-xs
+          | より
+    .title.cursor-pointer
+        .text-xl.font-bold
+          = "「#{message.title}」"
+    .message
+      div.mr-4.float-right id="#{dom_id message}_image"
+        - if message.image.present?
+          = image_tag message.image.url, size: '150x120', class:'ml-auto message-img object-fit-cover'
+      =< message.message
