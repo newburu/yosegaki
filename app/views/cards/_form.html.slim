@@ -6,7 +6,7 @@
     = f.association :user, as: :hidden
     = f.input :dear_name, input_html: {class: "input w-full input-bordered rounded-md max-w-x"}
     = f.input :title, input_html: {class: "input w-full input-bordered rounded-md max-w-x"}
-    = f.input :image, input_html: {class: "input w-full input-bordered rounded-md max-w-x"}
+    = f.input :image, as: :file, input_html: {class: "file-input file-input-bordered w-full rounded-md"}
     = f.input :open_at, as: :date, html5: true, input_html: {class: "input w-full input-bordered rounded-md max-w-x"}
 
   .form-actions.flex.flex-row.p-2

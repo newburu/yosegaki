@@ -10,7 +10,7 @@ div id="#{dom_id card}"
     =< card.title
   p
     strong Image:
-    =< card.image
+    =< image_tag card.image.url, size: '300x230', class:'card-img-top object-fit-cover'
   p
     strong Open at:
     =< card.open_at

@@ -100,3 +100,7 @@ end
 
 # CSS
 gem 'cssbundling-rails'
+
+# 画像アップロード
+gem 'carrierwave'
+gem "mini_magick"
