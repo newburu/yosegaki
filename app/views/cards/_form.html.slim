@@ -3,7 +3,6 @@
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
   .form-inputs.flex.flex-col
-    = f.association :user, as: :hidden
     = f.input :dear_name, input_html: {class: "input w-full input-bordered rounded-md max-w-x"}
     = f.input :title, input_html: {class: "input w-full input-bordered rounded-md max-w-x"}
     = f.input :image, as: :file, input_html: {class: "file-input file-input-bordered w-full rounded-md"}
