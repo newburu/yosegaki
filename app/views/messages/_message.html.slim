@@ -10,7 +10,7 @@ div id="#{dom_id message}"
     =< message.title
   p
     strong Image:
-    =< message.image
+    =< image_tag message.image.url, size: '300x230', class:'card-img-top object-fit-cover'
   p
     strong Message:
     =< message.message
