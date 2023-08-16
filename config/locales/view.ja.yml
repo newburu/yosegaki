@@ -24,3 +24,12 @@ ja:
         new_message: メッセージを追加する
     edit:
       title: 寄せ書きを修正
+  messages:
+    index:
+      title: メッセージ
+    new:
+      title: メッセージを追加
+    show:
+      title: メッセージ
+    edit:
+      title: メッセージを修正

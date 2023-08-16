@@ -1,7 +1,8 @@
 p[style="color: green"]
   = notice
-h1
-  | Users
+
+h1 = t('.title')
+
 #users
   - @users.each do |user|
     = render user
