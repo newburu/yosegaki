@@ -5,6 +5,7 @@
   .form-inputs.flex.flex-col
     = f.association :card, as: :hidden
     = f.input :name, input_html: {class: "input w-full input-bordered rounded-md max-w-x"}
+    = f.input :icon, as: :file, input_html: {class: "file-input file-input-bordered w-full rounded-md"}
     = f.input :title, input_html: {class: "input w-full input-bordered rounded-md max-w-x"}
     = f.input :image, as: :file, input_html: {class: "file-input file-input-bordered w-full rounded-md"}
     = f.input :message, input_html: {class: "input w-full input-bordered rounded-md max-w-x"}
