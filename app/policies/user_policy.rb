@@ -1,10 +1,10 @@
-class MessagePolicy < ApplicationPolicy
+class UserPolicy < ApplicationPolicy
   def index?
-    true
+    user.try(:admin?)
   end
 
   def show?
-    true
+    record == user || user.try(:admin?)
   end
 
   def create?
@@ -16,8 +16,7 @@ class MessagePolicy < ApplicationPolicy
   end
 
   def update?
-    return false if record.owner.nil?
-    record.owner == user || user.try(:admin?)
+    record == user || user.try(:admin?)
   end
 
   def edit?

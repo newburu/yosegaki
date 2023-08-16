@@ -9,10 +9,16 @@ ja:
         card:
           id: ID
           # view側： Card.human_attribute_name :title => "タイトル" / t("activerecord.attributes.Card.title")と同じ
-          dear_name: 宛先
+          dear_name: あいての名前
           title: タイトル
           image: 画像
           open_at: 公開日
+        message:
+          id: ID
+          name: あなたの名前
+          title: タイトル
+          image: 画像
+          message: メッセージ
   # 全てのmodelで共通して使用するattributesを定義
   attributes:
     created_at: 作成日

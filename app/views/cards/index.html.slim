@@ -1,10 +1,10 @@
 p style="color: green" = notice
 
-h1 Cards
+h1 = t('.title')
 
 #cards
   - @cards.each do |card|
-    == render card
+    = card.title
     .flex.flex-row.p-2
       .p-1
         = link_to t('btn.show'), card, class: "btn btn-primary rounded-md"
@@ -15,4 +15,5 @@ h1 Cards
         .p-1
           = button_to t('btn.destroy'), card, method: :delete, form: { data: { turbo_confirm: t('confirm.destroy') } }, class: "btn btn-warning rounded-md"
 
-= link_to t('btn.new'), new_card_path
+- if policy(Card).new?
+  = link_to t('.btn.new'), new_card_path, class: "btn btn-primary rounded-md"
