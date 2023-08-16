@@ -1,19 +1,16 @@
-div id="#{dom_id message}"
-  .mb-8.p-4.bg-pink-100.min-h-fit.rounded-xl
-    .title.cursor-pointer.grid.grid-cols-2
-      .text-xl.font-bold
-        = "「#{message.title}」"
-      .text-right.text-sm
-        - if policy(message).edit?
-          = link_to t('btn.edit'), edit_message_path(message)
-    .message
-      div id="#{dom_id message}_image"
-        - if message.image.present?
-          = image_tag message.image.url, size: '150x120', class:'ml-auto message-img object-fit-cover'
-      .message
-        = message.message
-    .from.cursor-pointer.text-right
-      .text-xl.font-bold
-        = message.name
-        span.text-xs
-          | より
+.card.mb-8.bg-base-100.shadow-xl.bg-pink-100 id="#{dom_id message}"
+  - if message.image.present?
+    figure
+      = image_tag message.image.url
+  .card-body.p-4.rounded-xl
+    h2.card-title
+      = message.title
+    p
+      = message.message
+    .from.text-right.text-xl.font-bold
+      = message.name
+      span.text-xs
+        | より
+    .card-actions.justify-end
+      - if policy(message).edit?
+        = link_to t('btn.edit'), edit_message_path(message), class: "btn btn-secondary rounded-md"
