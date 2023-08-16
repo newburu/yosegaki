@@ -7,7 +7,7 @@ p style="color: green" = notice
     .p-1
       = link_to t('btn.edit'), edit_message_path(@message), class: "btn btn-primary rounded-md"
   .p-1
-    = link_to t('btn.back'), messages_path, class: "btn btn-secondary rounded-md"
+    = link_to t('btn.back'), @message.card, class: "btn btn-secondary rounded-md"
   - if policy(@message).destroy?
     .p-1
       = button_to t('btn.destroy'), @message, method: :delete, form: { data: { turbo_confirm: t('confirm.destroy') } }, class: "btn btn-warning rounded-md"
