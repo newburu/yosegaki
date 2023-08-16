@@ -107,3 +107,6 @@ gem "mini_magick"
 
 # 認可
 gem 'pundit'
+
+# 初期データ
+gem 'seed-fu'
