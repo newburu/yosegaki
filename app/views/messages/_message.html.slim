@@ -1,15 +1,18 @@
 div id="#{dom_id message}"
-  .mb-8.bg-pink-100.min-h-fit
-    .title.cursor-pointer.ml-4
-        .text-xl.font-bold
-          = "「#{message.title}」"
+  .mb-8.p-4.bg-pink-100.min-h-fit.rounded-xl
+    .title.cursor-pointer.grid.grid-cols-2
+      .text-xl.font-bold
+        = "「#{message.title}」"
+      .text-right.text-sm
+        - if policy(message).edit?
+          = link_to t('btn.edit'), edit_message_path(message)
     .message
-      .mr-4 id="#{dom_id message}_image"
+      div id="#{dom_id message}_image"
         - if message.image.present?
           = image_tag message.image.url, size: '150x120', class:'ml-auto message-img object-fit-cover'
-      .message.ml-4
+      .message
         = message.message
-    .from.cursor-pointer.text-right.mr-4
+    .from.cursor-pointer.text-right
       .text-xl.font-bold
         = message.name
         span.text-xs
