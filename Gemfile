@@ -110,3 +110,6 @@ gem 'pundit'
 
 # 初期データ
 gem 'seed-fu'
+
+# 論理削除
+gem 'paranoia'
