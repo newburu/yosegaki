@@ -1,15 +1,16 @@
 div id="#{dom_id message}"
   .mb-8.bg-pink-100.min-h-fit
-    .from.cursor-pointer
+    .title.cursor-pointer.ml-4
+        .text-xl.font-bold
+          = "「#{message.title}」"
+    .message
+      .mr-4 id="#{dom_id message}_image"
+        - if message.image.present?
+          = image_tag message.image.url, size: '150x120', class:'ml-auto message-img object-fit-cover'
+      .message.ml-4
+        = message.message
+    .from.cursor-pointer.text-right.mr-4
       .text-xl.font-bold
         = message.name
         span.text-xs
           | より
-    .title.cursor-pointer
-        .text-xl.font-bold
-          = "「#{message.title}」"
-    .message
-      div.mr-4.float-right id="#{dom_id message}_image"
-        - if message.image.present?
-          = image_tag message.image.url, size: '150x120', class:'ml-auto message-img object-fit-cover'
-      =< message.message
