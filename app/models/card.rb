@@ -5,4 +5,5 @@ class Card < ApplicationRecord
   has_many :messages, dependent: :destroy
   mount_uploader :image, ImageUploader
 
+  acts_as_paranoid
 end

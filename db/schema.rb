@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_15_065613) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_16_063832) do
   create_table "cards", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "dear_name"
@@ -19,6 +19,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_15_065613) do
     t.date "open_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_cards_on_deleted_at"
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
@@ -31,7 +33,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_15_065613) do
     t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
     t.index ["card_id"], name: "index_messages_on_card_id"
+    t.index ["deleted_at"], name: "index_messages_on_deleted_at"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
