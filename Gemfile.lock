@@ -269,6 +269,9 @@ GEM
     ruby-vips (2.1.4)
       ffi (~> 1.12)
     rubyzip (2.3.2)
+    seed-fu (2.3.9)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
     selenium-webdriver (4.10.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -354,6 +357,7 @@ DEPENDENCIES
   pundit
   rails (~> 7.0.6)
   rails-i18n
+  seed-fu
   selenium-webdriver
   simple_form
   slim-rails
