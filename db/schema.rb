@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_16_063832) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_16_074046) do
   create_table "cards", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "dear_name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_16_063832) do
     t.bigint "card_id", null: false
     t.bigint "user_id"
     t.string "name"
+    t.string "icon"
     t.string "title"
     t.string "image"
     t.text "message"

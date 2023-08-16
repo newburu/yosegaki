@@ -8,6 +8,9 @@
     p
       = message.message
     .from.text-right.text-xl.font-bold
+      .avatar
+        .w-12.rounded-full
+          = image_tag message.icon.url
       = message.name
       span.text-xs
         | より
