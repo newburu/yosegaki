@@ -15,4 +15,5 @@ h1 = t('.title')
         .p-1
           = button_to t('btn.destroy'), card, method: :delete, form: { data: { turbo_confirm: t('confirm.destroy') } }, class: "btn btn-warning rounded-md"
 
-= link_to t('.btn.new'), new_card_path, class: "btn btn-primary rounded-md"
+- if policy(Card).new?
+  = link_to t('.btn.new'), new_card_path, class: "btn btn-primary rounded-md"
