@@ -16,6 +16,7 @@ ja:
         message:
           id: ID
           name: あなたの名前
+          icon: アイコン
           title: タイトル
           image: 画像
           message: メッセージ
