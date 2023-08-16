@@ -113,3 +113,15 @@ gem 'seed-fu'
 
 # 論理削除
 gem 'paranoia'
+
+# 自動デプロイ
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-puma'
+  gem 'ed25519' 
+  gem 'bcrypt_pbkdf'
+  gem 'sshkit-sudo'
+end
