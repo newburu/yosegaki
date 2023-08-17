@@ -90,8 +90,6 @@ gem 'meta-tags'
 # 設定
 gem 'config'
 
-gem "tailwindcss-rails", "~> 2.0"
-
 # i18n
 gem 'rails-i18n'
 group :development do
