@@ -6,4 +6,10 @@ class Card < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   acts_as_paranoid
+
+  # TITLEタグ用のAlias
+  def title_tag
+    "#{self.dear_name}さん「#{self.title}」"
+  end
+
 end

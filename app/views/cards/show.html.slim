@@ -1,3 +1,7 @@
+- set_meta_tags title: "#{@card.title_tag}", og: {title: "#{Settings.system[:title]}：#{@card.title_tag}"}
+- set_meta_tags og: {image: image_url(@card.image)} if @card.image.present?
+- set_meta_tags og: {description: "#{Settings.system[:description]}「#{@card.dear_name}」さんへメッセージを送ろう！「#{@card.title}」"}
+
 p style="color: green" = notice
 
 == render @card
