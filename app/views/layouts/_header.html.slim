@@ -1,42 +1,15 @@
 header
   .navbar.bg-base-100
-    .flex-1
+    .navbar-start
       = link_to Settings.system[:title], root_path, class: "btn btn-ghost normal-case text-xl"
-    .hidden.sm:flex
-      ul.menu.menu-horizontal.px-1.z-10
-        li tabindex="0"
-          = link_to t('menu.list'), '#', class: "link link-hover"
-          ul.p-2.bg-base-100
-            li
-              = link_to t('menu.user'), users_path, class: "link link-hover"
-            li
-              = link_to t('menu.card'), cards_path, class: "link link-hover"
-            li
-              = link_to t('menu.message'), messages_path, class: "link link-hover"
-        - if login?
-          li tabindex="0"
-            = link_to '#', class: "link link-hover py-0"
-              = image_tag current_user.image || "default.png", title: "#{current_user.display_name}さん", class: "rounded-full w-10"
-            ul.p-2.bg-base-100.right-0
-              li
-                = link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }, class: "link link-hover"
-        - else
-          li tabindex="0"
-            = button_to "Twitterでログイン", user_twitter_omniauth_authorize_path, method: :post, data: {turbo: "false"}, class: "link link-hover"
-    .flex.sm:hidden
-      input#menu-checkbox type="checkbox"
-      label.menu-btn for="menu-checkbox"
-        i.fas.fa-bars.fa-xl
-      .nav-content
-        input#menu-checkbox type="checkbox"
-        label.menu-btn for="menu-checkbox"
-          i.fas.fa-times
-        nav.nav-menu
-          ul
-            li tabindex="0"
-              a
-                = t('menu.list')
-              ul.p-2.bg-base-100
+    .hidden.sm:flex.navbar-end
+      .dropdown
+        ul.menu.menu-sm.menu-horizontal.px-1.z-10
+          li.w-32 tabindex="0"
+            details
+              summary
+                = link_to t('menu.list'), '#', class: "link link-hover"
+              ul.p-3.bg-base-100
                 li
                   = link_to t('menu.user'), users_path, class: "link link-hover"
                 li
@@ -44,11 +17,43 @@ header
                 li
                   = link_to t('menu.message'), messages_path, class: "link link-hover"
             - if login?
-              li
-                = link_to "#{current_user.display_name}さん", class: "link"
-                ul.p-2.bg-base-100
-                  = link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }
+              li.w-32 tabindex="0"
+                details
+                  summary
+                    = link_to '#', class: "link link-hover py-0"
+                      = image_tag current_user.image || "default.png", title: "#{current_user.display_name}さん", class: "rounded-full w-10"
+                  ul.p-2.bg-base-100.right-0
+                    li
+                      = link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }, class: "link link-hover"
             - else
-              li
-                = button_to "Twitterでログイン", user_twitter_omniauth_authorize_path, method: :post, data: {turbo: "false"}
-      label.nav-close for="menu-checkbox"
+              li tabindex="0"
+                = button_to "Twitterでログイン", user_twitter_omniauth_authorize_path, method: :post, data: {turbo: "false"}, class: "link link-hover"
+        .flex.sm:hidden
+          input#menu-checkbox type="checkbox"
+          label.menu-btn for="menu-checkbox"
+            i.fas.fa-bars.fa-xl
+          .nav-content
+            input#menu-checkbox type="checkbox"
+            label.menu-btn for="menu-checkbox"
+              i.fas.fa-times
+            nav.nav-menu
+              ul
+                li tabindex="0"
+                  a
+                    = t('menu.list')
+                  ul.p-2.bg-base-100
+                    li
+                      = link_to t('menu.user'), users_path, class: "link link-hover"
+                    li
+                      = link_to t('menu.card'), cards_path, class: "link link-hover"
+                    li
+                      = link_to t('menu.message'), messages_path, class: "link link-hover"
+                - if login?
+                  li
+                    = link_to "#{current_user.display_name}さん", class: "link"
+                    ul.p-2.bg-base-100
+                      = link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }
+                - else
+                  li
+                    = button_to "Twitterでログイン", user_twitter_omniauth_authorize_path, method: :post, data: {turbo: "false"}
+          label.nav-close for="menu-checkbox"
