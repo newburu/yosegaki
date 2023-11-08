@@ -12,4 +12,9 @@ class Card < ApplicationRecord
     "#{self.dear_name}さん「#{self.title}」"
   end
 
+  # 公開中？
+  def open?
+    self.open_at.nil? || self.open_at <= Date.today
+  end
+
 end

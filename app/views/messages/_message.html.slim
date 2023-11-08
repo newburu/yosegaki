@@ -1,3 +1,5 @@
+- open = false if open.nil?
+
 .card.mb-8.bg-base-100.shadow-xl.bg-pink-100 id="#{dom_id message}"
   - if message.image.present?
     figure
@@ -6,7 +8,10 @@
     h2.card-title
       = message.title
     p
-      = message.message
+      - if open || policy(message).edit?
+        = message.message
+      - else
+        | 作成者か管理者のみが参照可能です
     .from.text-right.text-xl.font-bold
       .avatar
         .w-12.rounded-full
