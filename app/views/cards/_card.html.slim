@@ -15,4 +15,4 @@ div id="#{dom_id card}"
 
   #messages.grid.gap-x-8.grid-cols-1.md:grid-cols-3
     - card.messages.each do |message|
-      == render message
+      == render message, { open: card.open? || policy(card).edit? }

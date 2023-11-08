@@ -1,6 +1,8 @@
+- open = false if open.nil?
+
 p style="color: green" = notice
 
-== render @message
+== render @message, { open: open }
 
 .flex.flex-row.p-2
   - if policy(@message).edit?

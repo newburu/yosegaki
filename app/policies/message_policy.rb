@@ -17,6 +17,7 @@ class MessagePolicy < ApplicationPolicy
 
   def update?
     return false if record.owner.nil?
+    return false if user.nil?
     record.owner == user || user.try(:admin?)
   end
 

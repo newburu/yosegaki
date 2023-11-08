@@ -4,7 +4,7 @@ h1 = t('.title')
 
 #messages
   - @messages.each do |message|
-    == render message
+    == render message, { open: policy(message).edit? }
     .flex.flex-row.p-2
       .p-1
         = link_to t('btn.show'), message, class: "btn btn-primary rounded-md"
